@@ -1,0 +1,5 @@
+#!/bin/sh
+
+password=$(cat ~/.netrc |awk '/api.acapella.ru/{a=1;}; //{ if(a==1) print($0) }'|grep password |head -n1 |awk '{print $2}')
+login=$(cat ~/.netrc |awk '/api.acapella.ru/{a=1;}; //{ if(a==1) print($0) }'|grep login |head -n1 |awk '{print $2}')
+echo -u $login:$password
