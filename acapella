@@ -1,10 +1,11 @@
-#!/usr/bin/python3.6
+#!/bin/env python
 
 import os
 launcher_path = os.path.dirname(os.path.realpath(__file__))
 
 import sys
 sys.path.append(launcher_path)
+print(launcher_path)
 
 from py_launcher.launcher import main
 main()

@@ -127,6 +127,11 @@ class StartCommand:
             print("TVM traffic: ")
             print("    {:18} {}".format("TVM bytes read:",             format_size(int(stats.bytesRead))))
             print("    {:18} {}".format("TVM bytes write:",            format_size(int(stats.bytesWrite))))
+
+            if status.result:
+                print("Result:")
+                print(status.result)
+
             return
         elif state == TransactionState.ERROR.value:
             print("transaction completed with errors:\n")

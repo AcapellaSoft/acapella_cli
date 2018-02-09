@@ -1,11 +1,7 @@
 import argparse
-from typing import List, Optional
-
 import sys
+from typing import List
 
-from acapella_api import auth
-from acapella_api.codebase import FragmentPath
-from acapella_api.common import TransactionId, CompactDam, UserId
 from acapella_api.logs import LogScope, LogRef
 from .context import ap
 
@@ -33,7 +29,7 @@ class LogCommand:
     def handle(self, args: List[str]):
         args = self.parser.parse_args(args)
         ref = self.parse_log_ref(args.logref)
-        print(ref.scope, ref.user, ref.trId, ref.frPath, ref.dam, ref.logId)
+        # print(ref.scope, ref.user, ref.trId, ref.frPath, ref.dam, ref.logId)
         ap.logs.read_log(ref)
 
     def __invalid_ref(self, ref: str):
